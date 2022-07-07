@@ -22,4 +22,8 @@ export class MainComponent implements OnInit {
   deleteProject() {
     this.projectService.deleteCurrentProject();
   }
+
+  newTask() {
+    this.projectService.newTask();
+  }
 }

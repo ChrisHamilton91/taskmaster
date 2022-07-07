@@ -1,0 +1,46 @@
+<h1>ALL PROJECTS</h1>
+
+<ng-container *ngFor="let project of allProjects; index as i">
+  <b style="display: block">{{ project.name }}</b>
+  <button (click)="switchTo(i)">SELECT</button>
+  <br />
+  <br />
+  <button (click)="moveProjectUp(i)">MOVE UP</button>
+  <button (click)="moveProjectDown(i)">MOVE DOWN</button>
+  <br />
+  <br />
+</ng-container>
+
+<button (click)="newProject()">NEW PROJECT</button>
+<br />
+<br />
+<button (click)="deleteAll()">DELETE ALL</button>
+
+<h1>CURRENT PROJECT</h1>
+<ng-container *ngIf="currentProject as project">
+  <pre>{{ project | json }}</pre>
+  <br />
+  <br />
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="project.name" saveOnChange />
+  <br />
+
+  <ng-container *ngFor="let task of project.tasks; index as i">
+    <label>Task {{ i }}:</label>
+    <input type="text" [(ngModel)]="task.name" saveOnChange />
+    <button (click)="toggleTask(i)">
+      {{ task.complete ? "UNCOMPLETE" : "COMPLETE" }}
+    </button>
+    <button (click)="moveTaskUp(i)">MOVE UP</button>
+    <button (click)="moveTaskDown(i)">MOVE DOWN</button>
+    <button (click)="deleteTask(i)">DELETE TASK</button>
+    <br />
+  </ng-container>
+
+  <br />
+  <br />
+  <button (click)="newTask()">NEW TASK</button>
+  <br />
+  <br />
+</ng-container>
+<button (click)="deleteProject()">DELETE PROJECT</button>
