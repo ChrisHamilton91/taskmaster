@@ -1,1 +1,14 @@
-<p>main works!</p>
+<h1>MAIN</h1>
+<ng-container *ngIf="project">
+  <pre>{{ project | json }}</pre>
+  <br />
+  <br />
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="project.name" [saveOnChange]="project.name" />
+</ng-container>
+<br />
+<br />
+<button (click)="newProject()">New Project</button>
+<br />
+<br />
+<button (click)="deleteProject()">DELETE</button>

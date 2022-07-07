@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
+  constructor(private projectService: ProjectService) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  get project() {
+    return this.projectService.currentProject;
   }
 
+  newProject() {
+    this.projectService.newProject();
+  }
+
+  deleteProject() {
+    this.projectService.deleteCurrentProject();
+  }
 }

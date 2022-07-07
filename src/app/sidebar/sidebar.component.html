@@ -1,1 +1,5 @@
-<p>sidebar works!</p>
+<h1>SIDEBAR</h1>
+<ng-container *ngFor="let project of projects; index as i">
+  <pre>{{ project | json }}</pre>
+  <button (click)="switchTo(i)">SWITCH</button>
+</ng-container>
