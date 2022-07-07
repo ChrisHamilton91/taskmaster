@@ -96,6 +96,10 @@ export class ProjectService {
     this.save();
     // Ensure current project doesn't change
     if (from === this.currentIndex) this.currentIndex = to;
+    else if (to === this.currentIndex) {
+      if (from < to) this.currentIndex--;
+      if (from > to) this.currentIndex++;
+    }
   }
 
   moveTaskUp(index: number) {
