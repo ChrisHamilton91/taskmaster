@@ -3,8 +3,6 @@
 <ng-container *ngFor="let project of allProjects; index as i">
   <b style="display: block">{{ project.name }}</b>
   <button (click)="switchTo(i)">SELECT</button>
-  <br />
-  <br />
   <button (click)="moveProjectUp(i)">MOVE UP</button>
   <button (click)="moveProjectDown(i)">MOVE DOWN</button>
   <br />
