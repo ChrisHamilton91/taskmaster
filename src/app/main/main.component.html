@@ -63,4 +63,21 @@
       ></button>
     </div>
   </ng-container>
+
+  <ng-container *ngIf="!project">
+    <div class="welcome-header">Welcome to Taskmaster!</div>
+    <div class="welcome-text">
+      Taskmaster is a simple and quick to-do list app.
+    </div>
+    <div class="welcome-text">Start a new project now!</div>
+    <br />
+    <button
+      (click)="newProject()"
+      label="New Project"
+      pButton
+      pRipple
+      icon="pi pi-plus"
+      class="p-button-success"
+    ></button>
+  </ng-container>
 </div>
