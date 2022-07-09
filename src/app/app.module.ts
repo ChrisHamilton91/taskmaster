@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,8 +11,20 @@ import { SaveOnChangeDirective } from './save-on-change.directive';
 import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, MainComponent, SaveOnChangeDirective, TestComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    MainComponent,
+    SaveOnChangeDirective,
+    TestComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
