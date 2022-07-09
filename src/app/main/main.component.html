@@ -1,14 +1,22 @@
 <div class="container">
   <ng-container *ngIf="project">
-    <input
-      class="project-name"
-      pInputText
-      [(ngModel)]="project.name"
-      saveOnChange
-      placeholder="Name Your Project..."
-    />
-
-    <br />
+    <div class="header">
+      <input
+        class="project-name"
+        pInputText
+        [(ngModel)]="project.name"
+        saveOnChange
+        placeholder="Name Your Project..."
+      />
+      <button
+        (click)="deleteProject()"
+        label="Delete Project"
+        pButton
+        pRipple
+        icon="pi pi-trash"
+        class="p-button-danger"
+      ></button>
+    </div>
 
     <div class="task-container">
       <div class="task" *ngFor="let task of project.tasks; index as i">
@@ -23,18 +31,36 @@
           saveOnChange
           placeholder="Name Your Task..."
         />
-        <button (click)="moveTaskUp(i)">MOVE UP</button>
-        <button (click)="moveTaskDown(i)">MOVE DOWN</button>
-        <button (click)="deleteTask(i)">DELETE TASK</button>
+        <button
+          (click)="moveTaskUp(i)"
+          pButton
+          pRipple
+          icon="pi pi-arrow-up"
+          class="p-button-help"
+        ></button>
+        <button
+          (click)="moveTaskDown(i)"
+          pButton
+          pRipple
+          icon="pi pi-arrow-down"
+          class="p-button-help"
+        ></button>
+        <button
+          (click)="deleteTask(i)"
+          pButton
+          pRipple
+          icon="pi pi-trash"
+          class="p-button-danger"
+        ></button>
       </div>
+      <br />
+      <button
+        (click)="newTask()"
+        label="New Task"
+        pButton
+        pRipple
+        icon="pi pi-plus"
+      ></button>
     </div>
-
-    <br />
-    <br />
-    <button (click)="newTask()">NEW TASK</button>
-    <br />
-    <br />
-    <button (click)="deleteProject()">DELETE PROJECT</button>
-    <pre>{{ project | json }}</pre>
   </ng-container>
 </div>

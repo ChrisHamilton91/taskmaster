@@ -11,6 +11,7 @@ import { SaveOnChangeDirective } from './save-on-change.directive';
 import { TestComponent } from './test/test.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     BrowserAnimationsModule,
     InputTextModule,
     CheckboxModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

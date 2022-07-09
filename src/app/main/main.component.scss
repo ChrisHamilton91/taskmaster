@@ -1,5 +1,6 @@
 .container {
   padding: 16px;
+  max-width: 50rem;
 }
 
 input {
@@ -7,12 +8,31 @@ input {
   border: none;
   cursor: pointer;
   font: inherit;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+button {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header button {
+  width: 145px;
+  padding: 8px 8px;
 }
 
 .project-name {
+  width: 0;
+  min-width: 12rem;
   font-size: 3rem;
   font-weight: bolder;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .task-container {
@@ -26,12 +46,15 @@ input {
 }
 
 .task input {
-  // width: 30rem;
   width: 0;
-  min-width: 16rem;
-  max-width: 30rem;
+  min-width: 12rem;
   margin-left: 8px;
   margin-right: 8px;
   flex-grow: 1;
   flex-shrink: 1;
+}
+
+.task button {
+  margin-left: 8px;
+  margin-right: 8px;
 }
