@@ -18,4 +18,20 @@ export class SidebarComponent implements OnInit {
   switchTo(index: number) {
     this.projectService.switchTo(index);
   }
+
+  moveProjectUp(index: number) {
+    this.projectService.moveProjectUp(index);
+  }
+
+  moveProjectDown(index: number) {
+    this.projectService.moveProjectDown(index);
+  }
+
+  newProject() {
+    this.projectService.newProject();
+  }
+
+  deleteAll() {
+    this.projectService.deleteAll();
+  }
 }

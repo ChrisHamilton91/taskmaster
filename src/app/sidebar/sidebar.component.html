@@ -1,5 +1,16 @@
-<h1>SIDEBAR</h1>
-<ng-container *ngFor="let project of projects; index as i">
-  <pre>{{ project | json }}</pre>
-  <button (click)="switchTo(i)">SWITCH</button>
-</ng-container>
+<div class="container">
+  <h1>SIDEBAR</h1>
+  <ng-container *ngFor="let project of projects; index as i">
+    <b style="display: block">{{ project.name }}</b>
+    <button (click)="switchTo(i)">SELECT</button>
+    <button (click)="moveProjectUp(i)">MOVE UP</button>
+    <button (click)="moveProjectDown(i)">MOVE DOWN</button>
+    <br />
+    <br />
+  </ng-container>
+
+  <button (click)="newProject()">NEW PROJECT</button>
+  <br />
+  <br />
+  <button (click)="deleteAll()">DELETE ALL</button>
+</div>

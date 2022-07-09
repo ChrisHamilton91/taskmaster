@@ -26,4 +26,20 @@ export class MainComponent implements OnInit {
   newTask() {
     this.projectService.newTask();
   }
+
+  toggleTask(index: number) {
+    this.projectService.toggleTask(index);
+  }
+
+  moveTaskUp(index: number) {
+    this.projectService.moveTaskUp(index);
+  }
+
+  moveTaskDown(index: number) {
+    this.projectService.moveTaskDown(index);
+  }
+
+  deleteTask(index: number) {
+    this.projectService.deleteTask(index);
+  }
 }

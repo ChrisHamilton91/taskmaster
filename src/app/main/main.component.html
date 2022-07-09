@@ -1,17 +1,29 @@
-<h1>MAIN</h1>
-<ng-container *ngIf="project">
-  <pre>{{ project | json }}</pre>
-  <br />
-  <br />
-  <label>Name:</label>
-  <input type="text" [(ngModel)]="project.name" saveOnChange />
-  <br />
-  <br />
-  <button (click)="newTask()">New Task</button>
-</ng-container>
-<br />
-<br />
-<button (click)="newProject()">New Project</button>
-<br />
-<br />
-<button (click)="deleteProject()">DELETE</button>
+<div class="container">
+  <h1>MAIN</h1>
+  <ng-container *ngIf="project">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="project.name" saveOnChange />
+    <br />
+
+    <ng-container *ngFor="let task of project.tasks; index as i">
+      <label>Task {{ i }}:</label>
+      <input type="text" [(ngModel)]="task.name" saveOnChange />
+      <button (click)="toggleTask(i)">
+        {{ task.complete ? "UNCOMPLETE" : "COMPLETE" }}
+      </button>
+      <button (click)="moveTaskUp(i)">MOVE UP</button>
+      <button (click)="moveTaskDown(i)">MOVE DOWN</button>
+      <button (click)="deleteTask(i)">DELETE TASK</button>
+      <br />
+    </ng-container>
+
+    <br />
+    <br />
+    <button (click)="newTask()">NEW TASK</button>
+    <br />
+    <br />
+  </ng-container>
+  <button (click)="deleteProject()">DELETE PROJECT</button>
+
+  <pre *ngIf="project">{{ project | json }}</pre>
+</div>
