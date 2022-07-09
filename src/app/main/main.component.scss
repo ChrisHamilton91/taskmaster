@@ -6,10 +6,32 @@ input {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font: inherit;
 }
 
 .project-name {
   font-size: 3rem;
   font-weight: bolder;
   width: 100%;
+}
+
+.task-container {
+  padding-left: 24px;
+  font-size: 1.4rem;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+}
+
+.task input {
+  // width: 30rem;
+  width: 0;
+  min-width: 16rem;
+  max-width: 30rem;
+  margin-left: 8px;
+  margin-right: 8px;
+  flex-grow: 1;
+  flex-shrink: 1;
 }

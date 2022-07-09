@@ -4,13 +4,15 @@
 }
 
 app-sidebar {
-  width: 0;
-  flex-grow: 1;
+  // min-width: 15vw;
+  flex-grow: 0;
+  flex-shrink: 0;
   background-color: var(--surface-b);
 }
 
 app-main {
-  width: 0;
-  flex-grow: 5;
+  // width: 85vw;
+  flex-grow: 1;
+  flex-shrink: 1;
   background-color: var(--surface-a);
 }

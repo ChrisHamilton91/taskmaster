@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SaveOnChangeDirective } from './save-on-change.directive';
 import { TestComponent } from './test/test.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { InputTextModule } from 'primeng/inputtext';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     InputTextModule,
+    CheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

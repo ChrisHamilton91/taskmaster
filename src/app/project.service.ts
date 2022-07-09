@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 export class Project {
-  name = 'Name Your Project...';
+  name = '';
   tasks: ProjectTask[] = [];
 }
 
 export class ProjectTask {
-  name = 'Name Your Task...';
+  name = '';
   complete = false;
 }
 
@@ -32,6 +32,7 @@ export class ProjectService {
     const data = localStorage.getItem(this.dataKey);
     if (!data) this.projects = [];
     else this.projects = JSON.parse(data);
+    if (this.projects.length > 0) this.currentIndex = 0;
   }
 
   save() {

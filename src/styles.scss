@@ -9,3 +9,16 @@ body {
   padding: 0;
   height: 100%;
 }
+
+// Main checkbox overrides
+$chkbox-size: 32px;
+app-main {
+  .p-checkbox,
+  .p-checkbox .p-checkbox-box {
+    width: $chkbox-size;
+    height: $chkbox-size;
+  }
+  .p-checkbox .p-checkbox-box .p-checkbox-icon {
+    font-size: calc($chkbox-size - 8px);
+  }
+}

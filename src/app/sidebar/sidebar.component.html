@@ -1,9 +1,12 @@
 <div class="container">
-  <h1>SIDEBAR</h1>
+  <h1 class="taskmaster">TASKMASTER</h1>
+  <br />
   <ng-container *ngFor="let project of projects; index as i">
     <b style="display: block">{{ i + 1 }}. {{ project.name }}</b>
     <button (click)="switchTo(i)">SELECT</button>
+    <br />
     <button (click)="moveProjectUp(i)">MOVE UP</button>
+    <br />
     <button (click)="moveProjectDown(i)">MOVE DOWN</button>
     <br />
     <br />
