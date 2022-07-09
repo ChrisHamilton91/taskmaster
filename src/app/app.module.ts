@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SaveOnChangeDirective } from './save-on-change.directive';
 import { TestComponent } from './test/test.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TestComponent } from './test/test.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

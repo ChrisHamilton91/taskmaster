@@ -1,8 +1,14 @@
 <div class="container">
-  <h1>MAIN</h1>
   <ng-container *ngIf="project">
-    <label>Name:</label>
-    <input type="text" [(ngModel)]="project.name" saveOnChange />
+    <input
+      class="project-name"
+      type="text"
+      pInputText
+      [(ngModel)]="project.name"
+      saveOnChange
+      placeholder="Name Your Project..."
+    />
+
     <br />
 
     <ng-container *ngFor="let task of project.tasks; index as i">
@@ -22,8 +28,7 @@
     <button (click)="newTask()">NEW TASK</button>
     <br />
     <br />
+    <button (click)="deleteProject()">DELETE PROJECT</button>
+    <pre>{{ project | json }}</pre>
   </ng-container>
-  <button (click)="deleteProject()">DELETE PROJECT</button>
-
-  <pre *ngIf="project">{{ project | json }}</pre>
 </div>

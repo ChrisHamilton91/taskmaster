@@ -1,7 +1,7 @@
 <div class="container">
   <h1>SIDEBAR</h1>
   <ng-container *ngFor="let project of projects; index as i">
-    <b style="display: block">{{ project.name }}</b>
+    <b style="display: block">{{ i + 1 }}. {{ project.name }}</b>
     <button (click)="switchTo(i)">SELECT</button>
     <button (click)="moveProjectUp(i)">MOVE UP</button>
     <button (click)="moveProjectDown(i)">MOVE DOWN</button>

@@ -1,3 +1,15 @@
 .container {
   padding: 16px;
 }
+
+input {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.project-name {
+  font-size: 3rem;
+  font-weight: bolder;
+  width: 100%;
+}

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 export class Project {
-  name = 'New Project';
+  name = 'Name Your Project...';
   tasks: ProjectTask[] = [];
 }
 
 export class ProjectTask {
-  name = 'New Task';
+  name = 'Name Your Task...';
   complete = false;
 }
 
