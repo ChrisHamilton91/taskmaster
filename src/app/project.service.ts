@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 export class Project {
   name = '';
+  expanded = false;
   tasks: ProjectTask[] = [];
 }
 
