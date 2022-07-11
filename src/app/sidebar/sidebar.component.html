@@ -1,85 +1,73 @@
-<div class="container" style = "width: 350px;">
-  <h1 class="taskmaster">TASKMASTER</h1>
+<div class="container" style="width: 350px">
+  <div class="taskmaster-container">
+    <h1 class="taskmaster">TASKMASTER</h1>
+  </div>
   <br />
-  <div class = "project-list" *ngFor="let project of projects; index as i">
+  <div class="project" *ngFor="let project of projects; index as i">
     <button
-          (click)="project.expanded = !project.expanded"
-          pButton
-          pRipple
-          [icon]="project.expanded ? 'pi pi-angle-down' : 'pi pi-angle-right'"
-          class="p-button-rounded p-button-text"
-        ></button>
+      (click)="project.expanded = !project.expanded"
+      pButton
+      pRipple
+      [icon]="project.expanded ? 'pi pi-angle-down' : 'pi pi-angle-right'"
+      class="p-button-rounded p-button-text"
+    ></button>
     <button
-          (click)="switchTo(i)"
-          pButton
-          pRipple
-          class="p-button-text cut-text"
-          style= "width: 200px;
-          text-align: left;
-          overflow: hidden;
-          display: inline-block;
-          white-space: nowrap;
-          text-overflow: ellipsis;"
-          >{{i + 1}}. {{project.name}}
-        </button>
+      (click)="switchTo(i)"
+      pButton
+      pRipple
+      class="p-button-text cut-text"
+      style="
+        font-size: 1.5rem;
+        width: 200px;
+        text-align: left;
+        overflow: hidden;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      "
+    >
+      {{ project.name ? project.name : "Name Your Project..." }}
+    </button>
     <button
-          (click)="moveProjectUp(i)"
-          pButton
-          pRipple
-          icon="pi pi-arrow-up"
-          class="p-button-help"
-          style = "font-size: 0.1px;"
-        ></button>
-        <button
-          (click)="moveProjectDown(i)"
-          pButton
-          pRipple
-          icon="pi pi-arrow-down"
-          class="p-button-help"
-          style = "font-size: 0.1px;"
-        ></button>
-    <div *ngIf="project.expanded">
-      <div *ngFor="let task of project.tasks">
-        <button
-          pButton
-          pRipple
-          [icon]="task.complete ? 'pi pi-check' : 'pi pi-times'"
-          class="p-button-rounded p-button-text"
-          style = "background-color: transparent;
-          color: rgb(206, 147, 216);"
-        ></button>
-        <button
-          pButton
-          pRipple
-          class="p-button-text"
-          style = "background-color: transparent;
-          color: white;
-          text-align: left;
-          width: 275px;
-          overflow: hidden;
-          display: inline-block;
-          white-space: nowrap;
-          text-overflow: ellipsis;"
+      (click)="moveProjectUp(i)"
+      pButton
+      pRipple
+      icon="pi pi-arrow-up"
+      style="font-size: 0.1px"
+    ></button>
+    <button
+      (click)="moveProjectDown(i)"
+      pButton
+      pRipple
+      icon="pi pi-arrow-down"
+      style="font-size: 0.1px"
+    ></button>
+    <ng-container *ngIf="project.expanded">
+      <div *ngFor="let task of project.tasks" class="task">
+        <i
+          class="pi pi-check complete-icon"
+          [style]="task.complete ? '' : 'visibility: hidden'"
+        ></i>
+        <div
+          style="
+            background-color: transparent;
+            color: white;
+            text-align: left;
+            width: 275px;
+            overflow: hidden;
+            display: inline-block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          "
         >
-        {{task.name}}</button>
+          {{ task.name ? task.name : "Empty Task" }}
+        </div>
       </div>
-    </div>
+    </ng-container>
   </div>
   <br />
   <br />
-  <button
-    (click)="newProject()"
-    pButton
-    pRipple
-    >NEW PROJECT</button>
+  <button (click)="newProject()" pButton pRipple>NEW PROJECT</button>
   <br />
   <br />
-  <button (click)="deleteAll()"
-    pButton
-    pRipple
-    type = "button"
-    style = "background-color: #F48FB1;
-    border-color: #F48FB1;"
-    >DELETE ALL</button>
-
 </div>
