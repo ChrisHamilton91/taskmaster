@@ -1,27 +1,29 @@
 # Taskmaster
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+Taskmaster is quick and easy to-do list application.
+It allows you to create multiple projects, each with a set of tasks.
+Taskmaster allows you to easily configure the order of tasks and track completed tasks as you finish them.
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This site is hosted at https://csi3140-taskmaster.netlify.app/
 
-## Code scaffolding
+## Host locally
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To host the site locally, install the Angular CLI `npm i -g @angular/cli`.
+Run `ng serve` in this directory for a dev server.
+Navigate to `http://localhost:4200/`.
 
-## Build
+## Instructions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Create a new project.
+Name your project.
+Create new tasks.
+Name your tasks.
+Check tasks off as you complete them.
+Select a project from the sidebar to bring it to the main view.
+The order of projects and tasks can be changed by pressing the up and down arrows.
+Expand a project using the right-arrow in the sidebar.
+Expanding a project allows you to quickly see the tasks of that project and whether or not they are completed.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Note: All data is automatically saved to local storage on any change.
