@@ -10,7 +10,9 @@ This site is hosted at https://csi3140-taskmaster.netlify.app/
 
 ## Host locally
 
-To host the site locally, install the Angular CLI `npm i -g @angular/cli`.
+To host the site locally, install Node and npm.
+Install the Angular CLI `npm i -g @angular/cli`.
+Run `npm i` in this directory to install dependencies.
 Run `ng serve` in this directory for a dev server.
 Navigate to `http://localhost:4200/`.
 
